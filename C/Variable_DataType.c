@@ -17,9 +17,15 @@ int main()
     printf("The float: %f \n", f);
     char c = 'b';
     printf("The character: %c \n", c);
+    char sh[] = "Shubham";
+    printf("The Name is: %s\n",sh);
     char s[10]; // scanf() is used to take input from user
-    scanf("%[^\n]%*c", &s); // [] is the scanset character. ^\n tells to take input until newline doesn’t get encountered. Then, with this %*c, it reads newline character and here used * indicates that this newline character is discarded.
-    printf("The String is: %s \n",s);
+    // scanf("%[^\n]s", &s); // [] is the scanset character. ^\n tells to take input until newline doesnâ€™t get encountered. 
+    scanf("%s",&s);
+    printf("The String is: %s \n",s);    
+    int j;
+    scanf("%d",&j);
+    printf("The number is: %d",j);
     
     printf("sizeof(char) == %d\n", sizeof(char));
   	printf("sizeof(short) == %d\n", sizeof(short));
