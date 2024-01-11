@@ -1,0 +1,309 @@
+Q.1.  Find the largest number among the three numbers
+
+#include <stdio.h>
+
+int main() {
+
+  float n1, n2, n3;
+
+  printf("Enter three different numbers: ");
+  scanf("%f %f %f", &n1, &n2, &n3);
+
+  // if n1 is greater than both n2 and n3, n1 is the largest
+  if (n1 >= n2 && n1 >= n3)
+    printf("%.2f is the largest number.", n1);
+
+  // if n2 is greater than both n1 and n3, n2 is the largest
+  if (n2 >= n1 && n2 >= n3)
+    printf("%.2f is the largest number.", n2);
+
+  // if n3 is greater than both n1 and n2, n3 is the largest
+  if (n3 >= n1 && n3 >= n2)
+    printf("%.2f is the largest number.", n3);
+
+  return 0;
+}
+
+Q.2. Write a Program to check whether a number is prime or not.
+
+#include <stdio.h>
+
+int main() {
+
+  int n, i, flag = 0;
+  printf("Enter a positive integer: ");
+  scanf("%d", &n);
+
+  for (i = 2; i <= n / 2; i++) {
+    // if n is divisible by i, then n is not prime
+    // change flag to 1 for non-prime number
+    if (n % i == 0) {
+      flag = 1;
+      break;
+    }
+  }
+  // flag is 0 for prime numbers
+  if (flag == 0)
+    printf("%d is a prime number.", n);
+  else
+    printf("%d is not a prime number.", n);
+
+  return 0;
+}
+
+Q.3. Write a C program to calculate Compound Interest.
+
+// Formula:- Simple Interest = (P * R * T) / 100
+// P- Principal Amount
+// R- Rate of Interest
+// T- Time
+
+# include <stdio.h>
+int main(){
+    int principal, rate, time, interest;
+
+    printf("Enter the principal: ");
+    scanf("%d", &principal);
+
+    printf("Enter the rate: ");
+    scanf("%d", &rate);
+
+    printf("Enter the time: ");
+    scanf("%d", &time);
+
+    interest = principal * rate * time / 100;
+    printf("The Simple interest is %d", interest);
+
+    return 0;
+
+}
+
+Q.4. Write a Program to check if the year is a leap year or not.
+
+#include <stdio.h>
+
+int main(){
+
+   int y; 
+
+   printf("Enter the year to check: ");
+
+   scanf("%d",&y);
+
+   if (((y % 4 == 0) && (y % 100!= 0)) || (y%400 == 0))
+
+      printf("It is a leap year");
+
+   else
+
+      printf("It is not a leap year");
+
+   return 0;
+
+}
+
+Q.5. Write a program to find Factorial of a Number.
+
+#include <stdio.h>
+int main() {
+    int n, i;
+    int fact = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    if (n < 0)
+        printf("Factorial of a negative number doesn't exist.");
+    else {
+        for (i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        printf("Factorial of %d = %d", n, fact);
+    }
+
+    return 0;
+}
+
+Q.6. Write a program to reverse a number.
+#include <stdio.h>
+
+int main() {
+  int n, reverse = 0, remainder;
+  printf("Enter an integer: ");
+  scanf("%d", &n);
+  while (n != 0) {
+    remainder = n % 10;
+    reverse = reverse * 10 + remainder;
+    n /= 10;
+  }
+  printf("Reversed number = %d", reverse);
+  return 0;
+}
+
+Q.7. Check whether a number is a palindrome.
+#include <stdio.h>
+int main() {
+  int n, reversed = 0, remainder, original;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    original = n;
+    while (n != 0) {
+        remainder = n % 10;
+        reversed = reversed * 10 + remainder;
+        n /= 10;
+    }
+    if (original == reversed)
+        printf("%d is a palindrome.", original);
+    else
+        printf("%d is not a palindrome.", original);
+    return 0;
+}
+
+Q.8. Find the area of a circle.
+#include <stdio.h>
+int main() {
+   float pie = 3.14;
+   int radius;
+   printf("Enter The Radius of Cicle:");
+   scanf("%d",&radius);
+   printf("The radius of the circle is %d\n" , radius);
+   float area = pie* radius * radius;
+   printf("The area of the given circle is %f", area);
+   return 0;
+}
+
+Q.9. count the sum of numbers in a string.
+#include<stdio.h>  
+int main()
+{
+    char str[100] = "14Disha5218Institute";
+    int i,sum = 0;
+    for (i= 0; str[i] != '\0'; i++)
+    {
+        if ((str[i] >= '0') && (str[i] <= '9')) 
+        {
+            
+            sum += (str[i] - '0'); 
+
+        }
+    }
+    printf("Sum of all digits:\n%d", sum);
+    return 0; 
+}
+
+Q.10. calculate the length of the string.
+1st Method:
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char str[100];
+    int len;
+    printf("\nEnter the String : ");
+    scanf("%s",str);
+    len = strlen(str);
+    
+    printf("\nLength of the given string is %d", len);
+    return(0);
+}
+
+2nd Method:
+#include <stdio.h>
+ 
+int main()
+{
+    char Str[1000];
+    int i;
+    printf("Enter the String: ");
+    scanf("%s", Str);
+    for (i = 0; Str[i] != '\0'; ++i); 
+    printf("Length of String is %d", i);
+    return 0;
+}
+
+Q.11. print the Fibonacci series using recursion.
+#include <stdio.h>
+
+int fibonacci(int num)
+{
+    if (num == 0)
+    {
+        return 0;
+    }
+    else if (num == 1)
+    {
+        return 1; 
+    }
+    else
+    {
+        return fibonacci(num - 1) + fibonacci(num - 2); 
+    }
+}
+
+int main()
+{
+    int num;
+    printf("Enter the number of elements to be in the series : ");
+    scanf("%d", &num); 
+    int i;
+    for (i = 0; i < num; i++)
+    {
+        printf("%d, ", fibonacci(i)); 
+    }
+
+    return 0;
+}
+
+Q.12. Swap the values of two variables without using any extra variable.
+#include<stdio.h>  
+ int main()    
+{    
+int a=10, b=20;      
+printf("Before swap a=%d b=%d",a,b);      
+a=a+b;//a=30 (10+20)    
+b=a-b;//b=10 (30-20)    
+a=a-b;//a=20 (30-10)    
+printf("\nAfter swap a=%d b=%d",a,b);    
+return 0;  
+} 
+
+Q.13.  Write a C program to find the third angle of a triangle if two angles are given.
+#include <stdio.h>
+int main()  
+{  
+    int ang1, ang2, ang3; 
+    printf("Input two angles of triangle: ");  
+    scanf("%d %d", &ang1, &ang2);  
+  
+     ang3 = 180 - (ang1 + ang2); 
+  
+    printf("Third angle of the triangle :  %d\n", ang3);  
+  
+    return 0;  
+}  
+
+Q.14. Write a C program to check whether a given number is even or odd.
+#include <stdio.h>   
+
+void main()
+{
+    int num1;  
+    printf("Input an integer : ");   
+    scanf("%d", &num1);   
+    if (num1 % 2 == 0)   
+        printf("%d is an even integer\n", num1);  
+    else
+        printf("%d is an odd integer\n", num1);    
+}
+
+Q.15. Write a C program to check whether a given number is positive or negative
+#include <stdio.h>   
+
+void main()
+{
+    int num;  
+
+    printf("Input a number : ");  
+    scanf("%d", &num);  
+    if (num >= 0)   
+        printf("%d is a positive number \n", num);   
+    else
+        printf("%d is a negative number \n", num);
+}
