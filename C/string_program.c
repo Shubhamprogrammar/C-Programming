@@ -23,6 +23,14 @@ int main()
     strcat(str1, str2);
     printf("\nConcatenated String 1 : %s\n", str1);
 
-
+    char str3[] = "apple";
+    char str4[] = "banana";
+    int result = strcmp(str3, str4);
+    if (result == 0)
+        printf("Strings are equal.\n");
+    else if (result < 0)
+        printf("String 1 is less than String 2.\n");
+    else
+        printf("String 1 is greater than String 2.\n");
     return 0;
 }
