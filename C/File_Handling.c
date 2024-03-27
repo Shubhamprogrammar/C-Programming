@@ -36,7 +36,7 @@ int main() {
     // Stores 1st line of file in variable s1
     fgets(s1, 100, fptr);
     printf("%s",s1); // %s is string
-    
+    rewind(fptr);
     // Read the full content and print it
     while(fgets(s2, 100, fptr)) {
     printf("%s", s2);
